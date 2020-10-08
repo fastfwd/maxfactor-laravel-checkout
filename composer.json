@@ -8,6 +8,11 @@
             "name": "Marco Mark",
             "email": "marco.mark@dewsign.co.uk",
             "homepage": "https://dewsign.co.uk"
+        },
+        {
+            "name": "Genesis Gallardo",
+            "email": "genesis@fastfwd.com",
+            "homepage": "https://www.fastfwd.com/"
         }
     ],
     "require": {
