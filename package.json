@@ -9,15 +9,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dewsign/maxfactor-laravel-checkout.git"
+        "url": "git+https://github.com/fastfwd/maxfactor-laravel-checkout.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/dewsign/maxfactor-laravel-checkout/issues"
+        "url": "https://github.com/fastfwd/maxfactor-laravel-checkout/issues"
     },
-    "homepage": "https://github.com/dewsign/maxfactor-laravel-checkout#readme",
+    "homepage": "https://github.com/fastfwd/maxfactor-laravel-checkout#readme",
     "devDependencies": {
         "husky": "^0.14.3",
         "lint-staged": "^6.0.0",
