@@ -1,6 +1,6 @@
 {
-    "name": "fastfwd/checkout",
-    "description": "'fastfwd checkout, previously maxfactor checkout'",
+    "name": "maxfactor/checkout",
+    "description": "'Maxfactor checkout'",
     "type": "library",
     "license": "MIT",
     "authors": [
