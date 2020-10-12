@@ -15,9 +15,16 @@
             "homepage": "https://www.fastfwd.com/"
         }
     ],
+    "repositories": [
+        {
+            "name": "maxfactor/support",
+            "type": "vcs",
+            "url": "https://github.com/fastfwd/maxfactor-laravel-support.git"
+        }
+    ],
     "require": {
         "laravel/framework": ">=5",
-        "maxfactor/support": "^1.0.0|^2.0.0",
+        "maxfactor/support": "dev-master",
         "league/omnipay": "^3.0",
         "omnipay/stripe": "3.1.x-dev",
         "omnipay/paypal": "^3.0"
@@ -35,6 +42,11 @@
             "providers": [
                 "Maxfactor\\Checkout\\CheckoutServiceProvider"
             ]
+        }
+    },
+    "config": {
+        "github-oauth": {
+            "github.com": "b6af5894c7fa1eca069b43779e2ae67a7b4d885d"
         }
     }
 }
