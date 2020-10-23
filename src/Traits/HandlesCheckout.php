@@ -275,11 +275,18 @@ trait HandlesCheckout
                     if ($valid) {
                         $value = $postcode;
                     } else {
-                        $fail($attribute.' is invalid.');
+                        $fail('Must be a valid UK postcode.');
                     }
                 }
             ],
             'address_country' => 'nullable|string',
+        ],
+        [
+            'firstname.required' => 'First Name is required.',
+            'surname.required' => 'Surname is required.',
+            'address.required' => 'Address is required.',
+            'address_city.required' => 'City is required.',
+            'address_postcode.required' => 'Post Code is required.'
         ])->validate();
     }
 
