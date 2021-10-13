@@ -13,6 +13,7 @@ class StripePaymentRequest extends FormRequest
         'checkout.payment.paymentMethod.object' => 'required|string',
         'checkout.payment.paymentMethod.type' => 'required|string',
         'checkout.user.terms' => 'required|accepted',
+        'checkout.shippingMethod.id' => 'required|integer|min:1',
     ];
 
     /**
@@ -23,6 +24,7 @@ class StripePaymentRequest extends FormRequest
     public function messages()
     {
         return [
+            'checkout.shippingMethod.id.*' => 'Delivery date is required. Please click return to delivery and select a delivery date.',
             'checkout.user.terms.required' => 'The terms must be accepted.',
             'checkout.user.terms.accepted'  => 'The terms must be accepted.',
             'checkout.billing.nameoncard.required'  => 'Please enter the name displayed on the Card',
