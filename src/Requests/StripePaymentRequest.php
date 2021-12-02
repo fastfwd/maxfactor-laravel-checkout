@@ -4,6 +4,7 @@ namespace Maxfactor\Checkout\Requests;
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Foundation\Http\FormRequest;
+use Maxfactor\Checkout\Rules\ValidDeliveryDate;
 
 class StripePaymentRequest extends FormRequest
 {
@@ -52,6 +53,7 @@ class StripePaymentRequest extends FormRequest
     public function rules()
     {
         $rules = $this->rules;
+        $rules['checkout.shippingMethod.date'] = new ValidDeliveryDate();
 
         if (Request::get('checkout')['useShipping'] === false) {
             $rules['checkout.billing.firstname'] = 'required|string';
