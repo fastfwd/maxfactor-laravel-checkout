@@ -17,7 +17,7 @@ class ValidDeliveryDate implements Rule
     public function passes($attribute, $value)
     {
         $invalidDate = Carbon::now();
-        $invalidDate->addDays(2);
+        $invalidDate->addDays(1);
         $deliveryDate = Carbon::parse($value);
 
         return $deliveryDate->gt($invalidDate);
