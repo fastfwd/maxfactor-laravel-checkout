@@ -23,7 +23,7 @@ class ValidatePrice implements Rule
     public function passes($attribute, $value)
     {
         foreach ($value as $item) {
-            $dbSkuPrice = $this->skuModel->find($item['id'])->price;
+            $dbSkuPrice = $this->skuModel->find($item['id'])->current_price;
             if ($item['unitPrice'] != $dbSkuPrice) {
                 return false;
             }
