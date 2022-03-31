@@ -23,7 +23,7 @@
         }
     ],
     "require": {
-        "laravel/framework": ">=5",
+        "laravel/framework": "^9.0",
         "maxfactor/support": "dev-master",
         "league/omnipay": "^3.0",
         "omnipay/stripe": "^3.2",
