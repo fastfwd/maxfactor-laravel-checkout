@@ -24,7 +24,7 @@
     ],
     "require": {
         "laravel/framework": "^9.0",
-        "maxfactor/support": "^1.0.0",
+        "maxfactor/support": "^1.0",
         "league/omnipay": "^3.0",
         "omnipay/stripe": "^3.2",
         "omnipay/paypal": "^3.0"
