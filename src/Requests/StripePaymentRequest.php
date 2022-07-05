@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Foundation\Http\FormRequest;
 use Maxfactor\Checkout\Rules\ValidatePrice;
 use Maxfactor\Checkout\Rules\ValidDeliveryDate;
-use Maxfactor\Checkout\Rules\DeliveryDateIsNotNull;
 
 class StripePaymentRequest extends FormRequest
 {
@@ -56,7 +55,6 @@ class StripePaymentRequest extends FormRequest
     {
         $rules = $this->rules;
         $rules['checkout.shippingMethod.date'] = new ValidDeliveryDate();
-        $rules['checkout.shippingMethod.date'] = new DeliveryDateIsNotNull();
         $rules['checkout.items'] = new ValidatePrice();
 
         if (Request::get('checkout')['useShipping'] === false) {
