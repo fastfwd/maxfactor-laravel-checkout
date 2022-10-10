@@ -129,9 +129,10 @@ class PaymentWrapper
     protected function processStripe()
     {
         $token = Stripe::getToken();
+        $idempotencyKey = Stripe::getIdempotencyToken();
 
         $paymentResponse = (new Stripe())
-            ->idempotencyKey($token) // We only want to allow a single charge per token
+            ->idempotencyKey($idempotencyKey) // We only want to allow a single charge per token
             ->token($token)
             ->amount($this->amount)
             ->reference($this->orderID)
@@ -156,9 +157,10 @@ class PaymentWrapper
     protected function confirmStripe($params = [])
     {
         $token = Stripe::getToken();
+        $idempotencyKey = Stripe::getIdempotencyToken();
 
         return (new Stripe())
-            ->idempotencyKey($token) // We only want to allow a single charge per token
+            ->idempotencyKey($idempotencyKey) // We only want to allow a single charge per token
             ->token($token)
             ->amount($this->amount)
             ->reference($this->orderID)
