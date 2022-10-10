@@ -24,7 +24,8 @@ class Stripe
      */
     public static function getToken()
     {
-        $token = Request::get('checkout')['payment']['paymentMethod']['id'];
+        $token = isset(Request::get('checkout')['payment']['paymentMethod']['id'])
+            ? Request::get('checkout')['payment']['paymentMethod']['id'] : null;
 
         if (!$token) {
             $token = Session::get('paymentIntent')['token'];
@@ -35,6 +36,12 @@ class Stripe
         }
 
         return $token;
+    }
+
+    public static function getIdempotencyToken()
+    {
+        return isset(Request::get('checkout')['idempotencyKey'])
+            ? Request::get('checkout')['idempotencyKey'] : null;
     }
 
     /**
