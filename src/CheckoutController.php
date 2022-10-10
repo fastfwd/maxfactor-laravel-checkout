@@ -32,7 +32,6 @@ class CheckoutController extends Controller
             ->stage($stage, 'store')
             ->append('uid', $uid)
             ->raw();
-
         return $result;
     }
 

@@ -38,6 +38,12 @@ class Stripe
         return $token;
     }
 
+    public static function getIdempotencyToken()
+    {
+        return isset(Request::get('checkout')['idempotencyKey'])
+            ? Request::get('checkout')['idempotencyKey'] : null;
+    }
+
     /**
      * Create the payment gateway
      *

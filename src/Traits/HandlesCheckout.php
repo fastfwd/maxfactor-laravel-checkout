@@ -49,7 +49,7 @@ trait HandlesCheckout
 
         return Request::has('uid')
             ? Request::all()
-            : optional(Session::get("checkout.{$uid}"))->toArray() ? : [];
+            : (optional(Session::get("checkout.{$uid}"))->toArray() ? : []);
     }
 
     /**
