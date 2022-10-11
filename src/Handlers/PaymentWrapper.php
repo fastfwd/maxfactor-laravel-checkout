@@ -147,6 +147,7 @@ class PaymentWrapper
             'amount' => $this->amount,
             'reference' => $this->orderID,
             'checkout' => collect(Request::get('checkout'))->toArray(),
+            'idempotencyKey' => $idempotencyKey,
         ]);
 
         Cache::put($this->cacheKey(), 'processed', 2/60);
