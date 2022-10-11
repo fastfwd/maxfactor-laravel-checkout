@@ -40,8 +40,18 @@ class Stripe
 
     public static function getIdempotencyToken()
     {
-        return isset(Request::get('checkout')['idempotencyKey'])
+        $token = isset(Request::get('checkout')['idempotencyKey'])
             ? Request::get('checkout')['idempotencyKey'] : null;
+
+        if (!$token) {
+            $token = Session::get('paymentIntent')['idempotencyKey'];
+        }
+
+        if (!$token) {
+            throw new Exception("The payment method idempotencyKey is missing", 404);
+        }
+
+        return $token;
     }
 
     /**
